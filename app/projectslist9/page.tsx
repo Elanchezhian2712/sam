@@ -28,7 +28,7 @@ function shuffleArray(array: Project[]): Project[] {
 const shuffledProjects: Project[] = shuffleArray([...projects]).slice(0, 3);
 
 const ProjectList: React.FC = () => {
-  const mainContent = content[3];
+  const mainContent = content[8];
 
   return (
     <div className="min-h-screen w-full overflow-hidden dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] flex flex-col relative">
@@ -93,7 +93,7 @@ const ProjectList: React.FC = () => {
                 key={index}
                 className="bg-gray-800 rounded-[20px] h-[300px] md:h-[600px] relative"
               >
-                <Link href={image.src}>
+                <Link href={image.src} target="_blank">
                   <Image
                     src={image.src}
                     alt={image.alt}

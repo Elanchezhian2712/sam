@@ -54,6 +54,54 @@ export const projects = [
     link: "/projectslist6",
     alt: "Image 6",
   },
+  {
+    id: 7,
+    title: "Project Name",
+    des: "Logo | Branding | Package Design",
+    img: "/p1.jpg",
+    link: "/projectslist7",
+    alt: "Image 1",
+  },
+  {
+    id: 8,
+    title: "Project Name",
+    des: "Logo | Branding | Package Design",
+    img: "/p1.jpg",
+    link: "/projectslist8",
+    alt: "Image 2",
+  },
+  {
+    id: 9,
+    title: "Project Name",
+    des: "Logo | Branding | Package Design",
+    img: "/p1.jpg",
+    link: "/projectslist9",
+    alt: "Image 3",
+  },
+  {
+    id: 10,
+    title: "Project Name",
+    des: "Logo | Branding | Package Design",
+    img: "/p1.jpg",
+    link: "/projectslist10",
+    alt: "Image 4",
+  },
+  {
+    id: 11,
+    title: "Project Name",
+    des: "Logo | Branding | Package Design",
+    img: "/p1.jpg",
+    link: "/projectslist11",
+    alt: "Image 5",
+  },
+  {
+    id: 12,
+    title: "Project Name",
+    des: "Logo | Branding | Package Design",
+    img: "/p1.jpg",
+    link: "/projectslist12",
+    alt: "Image 6",
+  },
 ];
 
 export const educations = [
@@ -336,6 +384,174 @@ export const content = [
   {
     id: 6,
     title: { text: "Project Title 6" },
+    description: {
+      text: `This is a description for Project Title 2. It provides insights into the project and its significance. 
+      This project involved extensive research and development, leading to innovative solutions in the field.`,
+    },
+    role: { text: "Lead Developer" },
+    deliverables: { text: "Web Application, API Development" },
+    images: [
+      {
+        src: "/image6.jpg",
+        alt: "Image 6",
+      },
+      {
+        src: "/image7.jpg",
+        alt: "Image 7",
+      },
+      {
+        src: "/image8.jpg",
+        alt: "Image 8",
+      },
+      {
+        src: "/image9.jpg",
+        alt: "Image 9",
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: { text: "Project Title 7" },
+    description: {
+      text: `This is a description for Project Title 2. It provides insights into the project and its significance. 
+      This project involved extensive research and development, leading to innovative solutions in the field.`,
+    },
+    role: { text: "Lead Developer" },
+    deliverables: { text: "Web Application, API Development" },
+    images: [
+      {
+        src: "/image6.jpg",
+        alt: "Image 6",
+      },
+      {
+        src: "/image7.jpg",
+        alt: "Image 7",
+      },
+      {
+        src: "/image8.jpg",
+        alt: "Image 8",
+      },
+      {
+        src: "/image9.jpg",
+        alt: "Image 9",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: { text: "Project Title 8" },
+    description: {
+      text: `This is a description for Project Title 2. It provides insights into the project and its significance. 
+      This project involved extensive research and development, leading to innovative solutions in the field.`,
+    },
+    role: { text: "Lead Developer" },
+    deliverables: { text: "Web Application, API Development" },
+    images: [
+      {
+        src: "/image6.jpg",
+        alt: "Image 6",
+      },
+      {
+        src: "/image7.jpg",
+        alt: "Image 7",
+      },
+      {
+        src: "/image8.jpg",
+        alt: "Image 8",
+      },
+      {
+        src: "/image9.jpg",
+        alt: "Image 9",
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: { text: "Project Title 9" },
+    description: {
+      text: `This is a description for Project Title 2. It provides insights into the project and its significance. 
+      This project involved extensive research and development, leading to innovative solutions in the field.`,
+    },
+    role: { text: "Lead Developer" },
+    deliverables: { text: "Web Application, API Development" },
+    images: [
+      {
+        src: "/image6.jpg",
+        alt: "Image 6",
+      },
+      {
+        src: "/image7.jpg",
+        alt: "Image 7",
+      },
+      {
+        src: "/image8.jpg",
+        alt: "Image 8",
+      },
+      {
+        src: "/image9.jpg",
+        alt: "Image 9",
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: { text: "Project Title 10" },
+    description: {
+      text: `This is a description for Project Title 2. It provides insights into the project and its significance. 
+      This project involved extensive research and development, leading to innovative solutions in the field.`,
+    },
+    role: { text: "Lead Developer" },
+    deliverables: { text: "Web Application, API Development" },
+    images: [
+      {
+        src: "/image6.jpg",
+        alt: "Image 6",
+      },
+      {
+        src: "/image7.jpg",
+        alt: "Image 7",
+      },
+      {
+        src: "/image8.jpg",
+        alt: "Image 8",
+      },
+      {
+        src: "/image9.jpg",
+        alt: "Image 9",
+      },
+    ],
+  },
+  {
+    id: 11,
+    title: { text: "Project Title 11" },
+    description: {
+      text: `This is a description for Project Title 2. It provides insights into the project and its significance. 
+      This project involved extensive research and development, leading to innovative solutions in the field.`,
+    },
+    role: { text: "Lead Developer" },
+    deliverables: { text: "Web Application, API Development" },
+    images: [
+      {
+        src: "/image6.jpg",
+        alt: "Image 6",
+      },
+      {
+        src: "/image7.jpg",
+        alt: "Image 7",
+      },
+      {
+        src: "/image8.jpg",
+        alt: "Image 8",
+      },
+      {
+        src: "/image9.jpg",
+        alt: "Image 9",
+      },
+    ],
+  },
+  {
+    id: 12,
+    title: { text: "Project Title 12" },
     description: {
       text: `This is a description for Project Title 2. It provides insights into the project and its significance. 
       This project involved extensive research and development, leading to innovative solutions in the field.`,

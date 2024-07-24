@@ -13,24 +13,29 @@ const Approach = () => {
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
         <Card
-          title="Planning & Strategy"
+          title="Design Approach"
           icon={<AceternityIcon order="Phase 1" />}
-          des="We'll collaborate to map out your website's goals, target audience, 
-          and key functionalities. We'll discuss things like site structure, 
-          navigation, and content requirements."
+          des="In this phase, we'll focus on understanding user needs and preferences. 
+  We'll conduct a requirements gathering session followed by a Q&A to clarify 
+  any uncertainties and ensure alignment on design objectives."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
             // add these classed for the border rounded overflowing -> rounded-3xl overflow-hidden
-            containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
+            containerClassName="bg-indigo-900 rounded-3xl overflow-hidden"
+            colors={[
+              [255, 166, 158],
+              [221, 255, 247],
+            ]}
+            dotSize={2}
           />
         </Card>
         <Card
           title="Development & Progress Update"
           icon={<AceternityIcon order="Phase 2" />}
-          des="Once we agree on the plan, I cue my lofi playlist and dive into
-          coding. From initial sketches to polished code, I keep you updated
-          every step of the way."
+          des="In this phase, we'll analyze competitor approaches and conduct thorough research 
+  to inform our development strategy. I'll keep you updated on our findings and 
+  how they shape our coding process, ensuring we stay ahead of the curve."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -50,9 +55,9 @@ const Approach = () => {
         <Card
           title="Development & Launch"
           icon={<AceternityIcon order="Phase 3" />}
-          des="This is where the magic happens! Based on the approved design, 
-          I'll translate everything into functional code, building your website
-          from the ground up."
+          des="In this phase, we'll begin with sketching the final design concepts, 
+  followed by the deployment of your website. We'll also finalize the color 
+  themes to ensure a cohesive and visually appealing user experience."
         >
           <CanvasRevealEffect
             animationSpeed={3}

@@ -143,7 +143,7 @@ const ProjectList: React.FC = () => {
                   className="flex flex-col text-black dark:text-white border-neutral-200 dark:border-slate-700 w-full"
                 >
                   <div className="relative w-full h-48 sm:h-64 mt-6 mx-4">
-                    <Link href={project.link} target="_blank">
+                    <Link href={project.link}>
                       <Image
                         src={project.img}
                         alt={project.alt}
@@ -166,7 +166,7 @@ const ProjectList: React.FC = () => {
         <div className="flex flex-col items-center">
           <h1 className="heading lg:max-w-[45vw]">
             Ready to take <span className="text-purple">Your</span> digital
-            presence to the next level?
+            presence to the next level..?
           </h1>
           <p className="text-white-200 md:mt-10 my-5 text-center">
             Reach out to me today and let&apos;s discuss how I can help you

@@ -1,7 +1,6 @@
 "use client";
 
 import MagicButton from "@/components/MagicButton";
-import { Button } from "@/components/ui/button";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { socialMedia } from "@/data";
 import Link from "next/link";
@@ -9,7 +8,8 @@ import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Image from "next/image"; // Import the Image component
+import Image from "next/image";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
 
 interface FormData {
   name: string;
@@ -57,17 +57,12 @@ export default function Home() {
       <header className="flex z-10 fixed p-4">
         <div className="flex items-center space-x-4">
           <Link href="/">
-            <MagicButton
-              title="Back"
-              icon={<FaArrowLeft />}
-              position="left"
-            />
+            <MagicButton title="Back" icon={<FaArrowLeft />} position="left" />
           </Link>
           <div
             className="cursor-pointer text-gree-500"
             onClick={() => toast("Email sent successfully!")}
-          >
-          </div>
+          ></div>
         </div>
       </header>
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
@@ -85,68 +80,92 @@ export default function Home() {
           fill="blue"
         />
       </div>
-      <div className="main-content flex justify-center my-20 pt-20 relative z-10">
+      <div className="main-content flex justify-center my-20 pt-20 pb-12 md:pb-10 md:pt-10 relative z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <div className="shadow-lg rounded-lg p-8 border border-navy-600 w-full md:w-[400px] lg:w-[500px] h-full md:h-[470px] backdrop-filter backdrop-blur-[16px] backdrop-saturate-[180%] bg-slate-950 border-[rgb(255,255,255)]">
-            <h1 className="text-4xl font-bold text-center text-purple mb-4">
-              Start a Project
-            </h1>
-            <div className="mt-8 md:mt-0">
-              <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                  <label htmlFor="name" className="block font-bold mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="bg-white text-black placeholder-navy-800 rounded border-navy-600 px-3 py-2 w-full"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="email" className="block font-bold mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your Email Address"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-white text-black placeholder-navy-800 rounded border-navy-600 px-3 py-2 w-full"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="message" className="block font-bold mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={2}
-                    placeholder="Enter your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="bg-white text-black placeholder-navy-800 rounded border-navy-600 px-3 py-2 w-full"
-                    required
-                  ></textarea>
-                </div>
-                <Button
-                  type="submit"
-                  className="bg-navy-600 hover:bg-purple transition-colors duration-300 text-white border border-navy-600 w-full z-20"
-                >
-                  Send
-                </Button>
-              </form>
+          <BackgroundGradient>
+            <div className="shadow-lg rounded-lg p-8 border border-navy-600 w-full md:w-[400px] lg:w-[500px] h-full md:h-[490px] backdrop-filter backdrop-blur-[16px] backdrop-saturate-[180%] bg-slate-950 border-[rgb(255,255,255)]">
+              <h1 className="text-xl md:text-3xl font-bold text-center text-purple">
+                Level Up Your Brand!
+              </h1>
+              <p className="mb-2 mt-2 text-center text-xs">
+                Design intuitive interfaces enhancing user experience through
+                aesthetics and functionality.
+              </p>
+              <hr />
+              <div className="mt-4 md:mt-2">
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-4">
+                    <label htmlFor="name" className="block mb-2">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Enter your name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="bg-white text-black rounded px-3 py-2 w-full"
+                      required
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label htmlFor="email" className="block mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your Email Address"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="bg-white text-black rounded px-3 py-2 w-full"
+                      required
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label htmlFor="message" className="block mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={2}
+                      placeholder="Enter your Message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="bg-white text-black rounded px-3 py-2 w-full"
+                      required
+                    ></textarea>
+                  </div>
+                  <div className="flex justify-center mt-4">
+                    <button className="box-border relative z-30 inline-flex items-center justify-center w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none">
+                      <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                      <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                      <span className="relative z-20 flex items-center text-sm">
+                        <svg
+                          className="relative w-5 h-5 mr-2 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"
+                          ></path>
+                        </svg>
+                        Send Message
+                      </span>
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
+          </BackgroundGradient>
         </div>
       </div>
       <footer className="absolute bottom-0 left-0 right-0 z-10 text-center justify-between p-8">
