@@ -60,7 +60,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/sam-profile.ico" sizes="any" />
         <meta name="robots" content="index, follow" />
-        {/* <link rel="canonical" href="https://samj.vercel.app" /> */}
       </head>
       <body className={inter.className}>
         <ThemeProvider
