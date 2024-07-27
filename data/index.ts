@@ -8,9 +8,9 @@ export const navItems = [
 export const projects = [
   {
     id: 1,
-    title: "Project Name",
-    des: "Logo | Branding | Package Design",
-    img: "/p1.jpg",
+    title: "Go Sports Water Bottle Package Design",
+    des: "Package Design",
+    img: "/p1.svg",
     link: "/projectslist",
     alt: "Image 1",
   },
@@ -230,14 +230,14 @@ export const socialMedia = [
   {
     id: 3,
     img: "/be.svg",
-    link: "https://www.behance.net/elanchezhiandev",
+    link: "https://www.behance.net/samdesigner12",
   },
 ];
 
 export const content = [
   {
     id: 1,
-    title: { text: "Sri Bhagavan Paper Mills" },
+    title: { text: "Go Sports Water Bottle Package Design" },
     description: {
       text: `Contrary to popular belief, Lorem Ipsum is not simply random text. 
       It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
@@ -252,19 +252,43 @@ export const content = [
     deliverables: { text: "Logo design, Branding, Design Assets" },
     images: [
       {
-        src: "/p1.jpg",
+        src: "/p1.svg",
         alt: "Image 1",
       },
       {
-        src: "/p1.jpg",
+        src: "/go2.svg",
         alt: "Image 2",
       },
       {
-        src: "/p1.jpg",
+        src: "/go3.svg",
         alt: "Image 3",
       },
       {
-        src: "/p1.jpg",
+        src: "/go4.svg",
+        alt: "Image 4",
+      },
+      {
+        src: "/go5.svg",
+        alt: "Image 4",
+      },
+      {
+        src: "/go6.svg",
+        alt: "Image 4",
+      },
+      {
+        src: "/go7.svg",
+        alt: "Image 4",
+      },
+      {
+        src: "/go8.svg",
+        alt: "Image 4",
+      },
+      {
+        src: "/go9.svg",
+        alt: "Image 4",
+      },
+      {
+        src: "/go10.svg",
         alt: "Image 4",
       },
     ],

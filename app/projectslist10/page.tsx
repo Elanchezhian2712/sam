@@ -1,9 +1,9 @@
 "use client";
 
 import MagicButton from "@/components/MagicButton";
-import { socialMedia, content, projects } from "@/data/index"; // Ensure the path is correct
+import { socialMedia, content, projects } from "@/data/index";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaArrowLeft, FaLocationArrow } from "react-icons/fa6";
 import { Spotlight } from "@/components/ui/Spotlight";
@@ -25,10 +25,13 @@ function shuffleArray(array: Project[]): Project[] {
   return array;
 }
 
-const shuffledProjects: Project[] = shuffleArray([...projects]).slice(0, 3);
-
 const ProjectList: React.FC = () => {
+  const [shuffledProjects, setShuffledProjects] = useState<Project[]>([]);
   const mainContent = content[9];
+
+  useEffect(() => {
+    setShuffledProjects(shuffleArray([...projects]).slice(0, 3));
+  }, []);
 
   return (
     <div className="min-h-screen w-full overflow-hidden dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] flex flex-col relative">
@@ -87,19 +90,20 @@ const ProjectList: React.FC = () => {
               <p>{mainContent.deliverables.text}</p>
             </div>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-8">
             {mainContent.images.slice(0, 2).map((image, index) => (
               <div
                 key={index}
-                className="bg-gray-800 rounded-[20px] h-[300px] md:h-[600px] relative"
+                className="relative rounded-lg overflow-hidden w-full md:w-[1340px] h-[200px] md:h-[700px]"
               >
                 <Link href={image.src} target="_blank">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="rounded-[20px]"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
                   />
                 </Link>
               </div>
@@ -110,15 +114,15 @@ const ProjectList: React.FC = () => {
             {mainContent.images.slice(2).map((image, index) => (
               <div
                 key={index + 2}
-                className="bg-gray-800 rounded-[20px] h-[300px] md:h-[600px] relative"
+                className="relative w-full h-48 md:h-80 rounded-lg overflow-hidden"
               >
                 <Link href={image.src} target="_blank">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="rounded-[20px]"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
                   />
                 </Link>
               </div>
