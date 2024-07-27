@@ -1,6 +1,7 @@
+// components/RecentProjects.js
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
+import { FaLocationArrow } from "react-icons/fa";
 import Link from "next/link";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
