@@ -83,7 +83,7 @@ export default function Home() {
       <div className="main-content flex justify-center my-20 pt-20 pb-12 md:pb-10 md:pt-10 relative z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <BackgroundGradient>
-            <div className="shadow-lg rounded-lg p-8 border border-navy-600 w-full md:w-[400px] lg:w-[500px] h-full md:h-[490px] backdrop-filter backdrop-blur-[16px] backdrop-saturate-[180%] bg-slate-950 border-[rgb(255,255,255)]">
+            <div className="shadow-lg rounded-lg p-8 border border-navy-600 w-full md:w-[400px] lg:w-[500px] h-full md:h-[490px] backdrop-filter backdrop-saturate-[180%] bg-slate-950 border-[rgb(255,255,255)]">
               <h1 className="text-xl md:text-3xl font-bold text-center text-purple">
                 Level Up Your Brand!
               </h1>

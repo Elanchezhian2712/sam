@@ -220,7 +220,7 @@ export const socialMedia = [
   {
     id: 1,
     img: "/gm.svg",
-    link: "mailto:samsjk123@gmail.com",
+    link: "https://mail.google.com/mail/?view=cm&fs=1&to=samsjk123@gmail.com",
   },
   {
     id: 2,

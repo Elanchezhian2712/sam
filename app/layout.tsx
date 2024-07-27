@@ -1,27 +1,30 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import "dotenv/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sam's Portfolio - UI/UX Designer",
   description:
-    "Discover Sam's award-winning UI/UX designs and learn how they can transform your digital experiences. Ranked top in Google search.",
+    "Explore Sam's creative portfolio showcasing award-winning UI/UX designs. Discover how Sam, a top UI/UX designer, can enhance your digital experiences.",
   keywords: [
+    "Sam",
     "Sam's Portfolio",
     "UI/UX Designer",
-    "UI Design",
-    "UX Design",
+    "Portfolio of a Designer",
+    "Creative UI Design",
+    "Innovative UX Design",
     "Top UI/UX Designer",
     "Digital Experiences",
   ],
   openGraph: {
-    title: "Sam's Portfolio - UI/UX Designer",
+    title: "Sam's Creative Portfolio - UI/UX Designer",
     description:
-      "Discover Sam's award-winning UI/UX designs and learn how they can transform your digital experiences. Ranked top in Google search.",
+      "Explore Sam's creative portfolio showcasing award-winning UI/UX designs. Discover how Sam, a top UI/UX designer, can enhance your digital experiences.",
     siteName: "Sam's Portfolio",
     images: [
       {
@@ -58,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/sam-profile.ico" sizes="any" />
+        <link rel="shortcut icon" href="/sam-profile.ico" type="image/x-icon" />
         <meta name="robots" content="index, follow" />
       </head>
       <body className={inter.className}>
