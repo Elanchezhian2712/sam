@@ -74,7 +74,7 @@ const ProjectList: React.FC = () => {
       <div className="absolute inset-0 pointer-events-none dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       <main className="container mx-auto p-8 flex-grow relative z-10">
         <section className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-purple">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-purple">
             {mainContent.title.text}
           </h1>
           <p className="text-white text-justify mb-8">

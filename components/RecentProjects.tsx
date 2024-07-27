@@ -37,7 +37,7 @@ const RecentProjects = () => {
                   />
                 </div>
 
-                <h2 className="font-bold lg:text-3xl md:text-xl text-base line-clamp-2">
+                <h2 className="font-bold text-sm md:text-lg lg:text-3xl line-clamp-2">
                   {item.title}
                 </h2>
 
