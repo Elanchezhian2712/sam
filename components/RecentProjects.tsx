@@ -9,7 +9,7 @@ import { Button } from "./ui/MovingBorders";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20 mt-2 sm:mt-4 md:mt-8 lg:mt-12" id="projects">
+    <div className="py-24 sm:mt-4 md:mt-8 lg:mt-12" id="projects">
       <h1 className="heading">
         My <span className="text-purple">Work</span>
       </h1>

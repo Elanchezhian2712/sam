@@ -4,10 +4,11 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import Link from "next/link";
 import React from "react";
+import { WavyBackground } from "./ui/wavy-background";
 
 const Hero: React.FC = () => {
   return (
-    <div className="pb-20 pt-36 sm:mt-4 md:mt-8 lg:mt-12 relative" id="about">
+    <div className="pb-16 pt-36 sm:mt-4 md:mt-8 lg:mt-12 relative" id="about">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -31,8 +32,11 @@ const Hero: React.FC = () => {
           bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
         />
       </div>
+      <div className="w-full absolute -top-10 -left-10 flex items-center justify-center md:h-screen md:-left-36">
+        <WavyBackground className="w-full" />
+      </div>
 
-      <div className="flex justify-center relative my-10 z-10">
+      <div className="flex justify-center relative my-7 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 mb-4 md:mb-0">
             Dynamic web and graphic magic with a focus on intuitive UX/UI

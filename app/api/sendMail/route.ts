@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
   try {
     await sendMail({
-      to: "elanchezhian2712.m@gmail.com", // Replace with your email
+      to: "samsjk123@gmail.com",
       name,
       email,
       subject: "New Project Inquiry",
