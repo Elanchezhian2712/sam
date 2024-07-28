@@ -29,8 +29,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/sam.png",
-        width: 1200,
-        height: 630,
         alt: "Sam's Portfolio - UI/UX Designer",
       },
     ],
@@ -58,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/sam.png" type="image/x-icon" sizes="any" />
+        <link rel="icon" href="/sam.png" sizes="any" />
         <meta name="robots" content="index, follow" />
       </head>
       <body className={inter.className}>
