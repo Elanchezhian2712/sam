@@ -4,7 +4,6 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import Link from "next/link";
 import React from "react";
-import { WavyBackground } from "./ui/wavy-background";
 
 const Hero: React.FC = () => {
   return (
@@ -32,10 +31,7 @@ const Hero: React.FC = () => {
           bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
         />
       </div>
-      <div className="w-full absolute -top-10 -left-10 flex items-center justify-center md:h-screen md:-left-36">
-        <WavyBackground className="w-full" />
-      </div>
-
+      <div className="w-full absolute -top-10 -left-10 flex items-center justify-center md:h-screen md:-left-36"></div>
       <div className="flex justify-center relative my-7 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 mb-4 md:mb-0">
@@ -44,7 +40,7 @@ const Hero: React.FC = () => {
           </p>
           <TextGenerateEffect
             words="I'm SAM JAYAKUMAR"
-            className="text-center text-[30px] md:text-5xl lg:text-6xl"
+            className="text-center text-[24px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-8 text-xs md:text-sm lg:text-lg">
