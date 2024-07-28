@@ -61,7 +61,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="shortcut icon" href="/sam-profile.ico" type="image/x-icon" />
+        <link
+          rel="shortcut icon"
+          href="/sam-profile.ico"
+          type="image/x-icon"
+          sizes="any"
+        />
         <meta name="robots" content="index, follow" />
       </head>
       <body className={inter.className}>
