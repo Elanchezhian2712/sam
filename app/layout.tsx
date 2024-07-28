@@ -26,12 +26,6 @@ export const metadata: Metadata = {
     description:
       "Explore Sam's creative portfolio showcasing award-winning UI/UX designs. Discover how Sam, a top UI/UX designer, can enhance your digital experiences.",
     siteName: "Sam's Portfolio",
-    images: [
-      {
-        url: "/sam.png",
-        alt: "Sam's Portfolio - UI/UX Designer",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
