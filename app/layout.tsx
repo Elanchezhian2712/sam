@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Sam's Portfolio",
     images: [
       {
-        url: "/sam-profile.png",
+        url: "/sam.png",
         width: 1200,
         height: 630,
         alt: "Sam's Portfolio - UI/UX Designer",
@@ -47,9 +47,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  icons: {
-    icon: "/sam-profile.ico",
   },
 };
 
