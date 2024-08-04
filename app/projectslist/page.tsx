@@ -108,7 +108,7 @@ const ProjectList: React.FC = () => {
             {mainContent.images.slice(0, 2).map((image, index) => (
               <div
                 key={index}
-                className="relative w-full h-0 pb-[56.25%] md:h-[700px] md:pb-0" // Aspect ratio of 16:9 for mobile
+                className="relative w-full h-0 pb-[56.25%] md:h-[700px]"
               >
                 {imageLoading[index] && (
                   <div className="absolute inset-0 bg-black-200 bg-opacity-30 backdrop-blur-lg rounded-lg"></div>
