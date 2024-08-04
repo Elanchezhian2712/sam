@@ -8,7 +8,7 @@ export const navItems = [
 export const projects = [
   {
     id: 1,
-    title: "Go Sports Water Bottle Package Design",
+    title: "Go Sports Water Bottle",
     des: "Package Design",
     img: "/image/go_sports/Slide 1@4x-100.webp",
     link: "/projectslist",

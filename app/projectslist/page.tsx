@@ -93,6 +93,7 @@ const ProjectList: React.FC = () => {
           <p className="text-white text-justify mb-8">
             {mainContent.description.text}
           </p>
+
           <div className="flex flex-col md:flex-row justify-between mb-8">
             <div className="mb-4 md:mb-0">
               <h2 className="font-bold mb-2 text-purple">Role :</h2>
