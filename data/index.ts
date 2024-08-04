@@ -249,46 +249,46 @@ export const content = [
       The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.`,
     },
     role: { text: "Graphic Designer" },
-    deliverables: { text: "Logo design, Branding, Design Assets" },
+    deliverables: { text: "Package Design" },
     images: [
       {
-        src: "/Slide 1@4x-100.webp",
+        src: "/image/go_sports/Slide 1@4x-100.webp",
         alt: "Image 1",
       },
       {
-        src: "/go2.svg",
+        src: "/image/go_sports/Slide 2@4x-100.webp",
         alt: "Image 2",
       },
       {
-        src: "/go3.svg",
+        src: "/image/go_sports/Slide 3@4x-100.webp",
         alt: "Image 3",
       },
       {
-        src: "/go4.svg",
+        src: "/image/go_sports/Slide 4@4x-100.webp",
         alt: "Image 4",
       },
       {
-        src: "/go5.svg",
+        src: "/image/go_sports/Slide 5@4x-100.webp",
         alt: "Image 4",
       },
       {
-        src: "/go6.svg",
+        src: "/image/go_sports/Slide 5_1@4x-100.webp",
         alt: "Image 4",
       },
       {
-        src: "/go7.svg",
+        src: "/image/go_sports/Slide 7@4x-100.webp",
         alt: "Image 4",
       },
       {
-        src: "/go8.svg",
+        src: "/image/go_sports/Slide 8@4x-100.webp",
         alt: "Image 4",
       },
       {
-        src: "/go9.svg",
+        src: "/image/go_sports/Slide 9@4x-100.webp",
         alt: "Image 4",
       },
       {
-        src: "/go10.svg",
+        src: "/image/go_sports/Slide 10@4x-100.webp",
         alt: "Image 4",
       },
     ],

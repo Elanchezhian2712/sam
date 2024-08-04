@@ -33,6 +33,18 @@ const ProjectList: React.FC = () => {
     setShuffledProjects(shuffleArray([...projects]).slice(0, 3));
   }, []);
 
+  const [imageLoading, setImageLoading] = useState<boolean[]>(
+    new Array(mainContent.images.length).fill(true)
+  );
+
+  const handleImageLoad = (index: number) => {
+    setImageLoading((prev) => {
+      const newLoadingState = [...prev];
+      newLoadingState[index] = false;
+      return newLoadingState;
+    });
+  };
+
   return (
     <div className="min-h-screen w-full overflow-hidden dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] flex flex-col relative">
       <div>
@@ -98,13 +110,19 @@ const ProjectList: React.FC = () => {
                 key={index}
                 className="relative rounded-lg overflow-hidden w-full h-[calc(100vw*0.5625)] md:h-[700px]"
               >
+                {imageLoading[index] && (
+                  <div className="absolute inset-0 bg-black-200 bg-opacity-30 backdrop-blur-lg rounded-lg"></div>
+                )}
                 <Link href={image.src} target="_blank">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className={`rounded-lg transition-opacity duration-300 ${
+                      imageLoading[index] ? "opacity-0" : "opacity-100"
+                    }`}
+                    onLoad={() => handleImageLoad(index)}
                   />
                 </Link>
               </div>
@@ -117,13 +135,19 @@ const ProjectList: React.FC = () => {
                 key={index + 2}
                 className="relative w-full h-48 md:h-80 rounded-lg overflow-hidden"
               >
+                {imageLoading[index + 2] && (
+                  <div className="absolute inset-0 bg-black-200 bg-opacity-30 backdrop-blur-lg rounded-lg"></div>
+                )}
                 <Link href={image.src} target="_blank">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className={`rounded-lg transition-opacity duration-300 ${
+                      imageLoading[index + 2] ? "opacity-0" : "opacity-100"
+                    }`}
+                    onLoad={() => handleImageLoad(index + 2)}
                   />
                 </Link>
               </div>
@@ -169,11 +193,11 @@ const ProjectList: React.FC = () => {
       </main>
       <footer className="text-center p-8 z-10 mt-20 relative">
         <div className="flex flex-col items-center">
-          <h1 className="heading lg:max-w-[60vw] md:max-w-[80vw]">
+          <h1 className="heading lg:max-w-[45vw]">
             Ready to take <span className="text-purple">Your</span> digital
             presence to the next level..?
           </h1>
-          <p className="text-white-200 md:mt-10 my-5 text-center max-w-[90%]">
+          <p className="text-white-200 md:mt-10 my-5 text-center">
             Reach out to me today and let&apos;s discuss how I can help you
             achieve your goals.
           </p>
