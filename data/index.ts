@@ -252,7 +252,7 @@ export const content = [
     deliverables: { text: "Logo design, Branding, Design Assets" },
     images: [
       {
-        src: "/p1.svg",
+        src: "/Slide 1@4x-100.webp",
         alt: "Image 1",
       },
       {

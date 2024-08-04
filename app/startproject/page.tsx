@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
+// import Loading from "./loading";
 
 interface FormData {
   name: string;
@@ -54,13 +55,15 @@ export default function Home() {
 
   return (
     <div className="h-screen w-full overflow-hidden dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] relative">
+      {/* <Loading /> */}
       <header className="flex z-10 fixed p-4">
         <div className="flex items-center space-x-4">
-          <Link href="/">
+          <Link href="/" className="cursor-pointer">
             <MagicButton title="Back" icon={<FaArrowLeft />} position="left" />
           </Link>
+
           <div
-            className="cursor-pointer text-gree-500"
+            className="cursor-pointer text-green-500"
             onClick={() => toast("Email sent successfully!")}
           ></div>
         </div>

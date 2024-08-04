@@ -72,6 +72,7 @@ const ProjectList: React.FC = () => {
         </div>
       </header>
       <div className="absolute inset-0 pointer-events-none dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+
       <main className="container mx-auto p-8 flex-grow relative z-10">
         <section className="mb-16">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 text-purple">
@@ -95,7 +96,7 @@ const ProjectList: React.FC = () => {
             {mainContent.images.slice(0, 2).map((image, index) => (
               <div
                 key={index}
-                className="relative rounded-lg overflow-hidden w-full md:w-[1340px] h-[200px] md:h-[700px]"
+                className="relative rounded-lg overflow-hidden w-full h-[calc(100vw*0.5625)] md:h-[700px]"
               >
                 <Link href={image.src} target="_blank">
                   <Image
@@ -168,11 +169,11 @@ const ProjectList: React.FC = () => {
       </main>
       <footer className="text-center p-8 z-10 mt-20 relative">
         <div className="flex flex-col items-center">
-          <h1 className="heading lg:max-w-[45vw]">
+          <h1 className="heading lg:max-w-[60vw] md:max-w-[80vw]">
             Ready to take <span className="text-purple">Your</span> digital
             presence to the next level..?
           </h1>
-          <p className="text-white-200 md:mt-10 my-5 text-center">
+          <p className="text-white-200 md:mt-10 my-5 text-center max-w-[90%]">
             Reach out to me today and let&apos;s discuss how I can help you
             achieve your goals.
           </p>
