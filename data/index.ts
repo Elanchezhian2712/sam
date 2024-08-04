@@ -10,7 +10,7 @@ export const projects = [
     id: 1,
     title: "Go Sports Water Bottle Package Design",
     des: "Package Design",
-    img: "/p1.svg",
+    img: "/image/go_sports/Slide 1@4x-100.webp",
     link: "/projectslist",
     alt: "Image 1",
   },
