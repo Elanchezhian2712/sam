@@ -104,11 +104,11 @@ const ProjectList: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-8">
+          <div className="grid grid-cols-1 gap-4 mb-8">
             {mainContent.images.slice(0, 2).map((image, index) => (
               <div
                 key={index}
-                className="relative rounded-lg overflow-hidden w-full h-[calc(100vw*0.5625)] md:h-[700px]"
+                className="relative w-full h-0 pb-[56.25%] md:h-[700px] md:pb-0" // Aspect ratio of 16:9 for mobile
               >
                 {imageLoading[index] && (
                   <div className="absolute inset-0 bg-black-200 bg-opacity-30 backdrop-blur-lg rounded-lg"></div>
@@ -119,7 +119,7 @@ const ProjectList: React.FC = () => {
                     alt={image.alt}
                     fill
                     style={{ objectFit: "cover" }}
-                    className={`rounded-lg transition-opacity duration-300 ${
+                    className={`absolute inset-0 rounded-lg transition-opacity duration-300 ${
                       imageLoading[index] ? "opacity-0" : "opacity-100"
                     }`}
                     onLoad={() => handleImageLoad(index)}
