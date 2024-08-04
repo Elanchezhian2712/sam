@@ -104,7 +104,7 @@ const ProjectList: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 mb-8">
+          <div className="grid grid-cols-1 gap-4 mb-4 md:mb-4">
             {mainContent.images.slice(0, 2).map((image, index) => (
               <div
                 key={index}
@@ -118,10 +118,14 @@ const ProjectList: React.FC = () => {
                     src={image.src}
                     alt={image.alt}
                     fill
-                    style={{ objectFit: "cover" }}
                     className={`absolute inset-0 rounded-lg transition-opacity duration-300 ${
                       imageLoading[index] ? "opacity-0" : "opacity-100"
                     }`}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
                     onLoad={() => handleImageLoad(index)}
                   />
                 </Link>
@@ -143,10 +147,14 @@ const ProjectList: React.FC = () => {
                     src={image.src}
                     alt={image.alt}
                     fill
-                    style={{ objectFit: "cover" }}
                     className={`rounded-lg transition-opacity duration-300 ${
                       imageLoading[index + 2] ? "opacity-0" : "opacity-100"
                     }`}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
                     onLoad={() => handleImageLoad(index + 2)}
                   />
                 </Link>
@@ -176,10 +184,10 @@ const ProjectList: React.FC = () => {
                       <Image
                         src={project.img}
                         alt={project.alt}
-                        objectFit="cover"
                         className="rounded-[20px] transition-transform duration-300 ease-in-out transform hover:animate-pulseOnce"
                         width={600}
                         height={400}
+                        style={{ objectFit: "cover" }}
                       />
                     </Link>
                   </div>
@@ -221,14 +229,9 @@ const ProjectList: React.FC = () => {
                 href={info.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-80 bg-black-200 rounded-lg border border-black-300"
+                className="text-white"
               >
-                <Image
-                  src={info.img}
-                  alt="social media icon"
-                  width={20}
-                  height={20}
-                />
+                {info.icon}
               </a>
             ))}
           </div>
