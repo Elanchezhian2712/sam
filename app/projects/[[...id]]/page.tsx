@@ -8,14 +8,16 @@ import Image from "next/image";
 import { FaArrowLeft, FaLocationArrow } from "react-icons/fa6";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { Button } from "@/components/ui/MovingBorders";
+import { useParams } from "next/navigation";
 
 interface Project {
+  id: number;
   link: string;
   img: string;
   alt: string;
   title: string;
   des: string;
-}
+} 
 
 function shuffleArray(array: Project[]): Project[] {
   for (let i = array.length - 1; i > 0; i--) {
@@ -26,12 +28,32 @@ function shuffleArray(array: Project[]): Project[] {
 }
 
 const ProjectList: React.FC = () => {
+  const params = useParams();
+  const id = params.id as string;
   const [shuffledProjects, setShuffledProjects] = useState<Project[]>([]);
-  const mainContent = content[5];
+  const mainContent = content.find((item) => item.id === parseInt(id));
 
   useEffect(() => {
-    setShuffledProjects(shuffleArray([...projects]).slice(0, 3));
-  }, []);
+    if (id) {
+      setShuffledProjects(shuffleArray([...projects]).slice(0, 3));
+    }
+  }, [id]);
+
+  const [imageLoading, setImageLoading] = useState<boolean[]>(
+    new Array(mainContent?.images.length ?? 0).fill(true)
+  );
+
+  const handleImageLoad = (index: number) => {
+    setImageLoading((prev) => {
+      const newLoadingState = [...prev];
+      newLoadingState[index] = false;
+      return newLoadingState;
+    });
+  };
+
+  if (!mainContent) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="min-h-screen w-full overflow-hidden dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] flex flex-col relative">
@@ -72,6 +94,7 @@ const ProjectList: React.FC = () => {
         </div>
       </header>
       <div className="absolute inset-0 pointer-events-none dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+
       <main className="container mx-auto p-8 flex-grow relative z-10">
         <section className="mb-16">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 text-purple">
@@ -80,30 +103,41 @@ const ProjectList: React.FC = () => {
           <p className="text-white text-justify mb-8">
             {mainContent.description.text}
           </p>
+
           <div className="flex flex-col md:flex-row justify-between mb-8">
             <div className="mb-4 md:mb-0">
-              <h2 className="font-bold mb-2 text-purple">Role :</h2>
+              <h2 className="font-bold mb-2 text-purple">Role:</h2>
               <p>{mainContent.role.text}</p>
             </div>
             <div>
-              <h2 className="font-bold mb-2 text-purple">Deliverables :</h2>
+              <h2 className="font-bold mb-2 text-purple">Deliverables:</h2>
               <p>{mainContent.deliverables.text}</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-8">
+          <div className="grid grid-cols-1 gap-4 mb-4 md:mb-4">
             {mainContent.images.slice(0, 2).map((image, index) => (
               <div
                 key={index}
-                className="relative rounded-lg overflow-hidden w-full md:w-[1340px] h-[200px] md:h-[700px]"
+                className="relative w-full h-0 pb-[56.25%] md:h-[700px]"
               >
+                {imageLoading[index] && (
+                  <div className="absolute inset-0 bg-black-200 bg-opacity-30 backdrop-blur-lg rounded-lg"></div>
+                )}
                 <Link href={image.src} target="_blank">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    fill
+                    className={`absolute inset-0 rounded-lg transition-opacity duration-500 ${
+                      imageLoading[index] ? "opacity-0" : "opacity-100"
+                    }`}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    onLoad={() => handleImageLoad(index)}
                   />
                 </Link>
               </div>
@@ -116,13 +150,23 @@ const ProjectList: React.FC = () => {
                 key={index + 2}
                 className="relative w-full h-48 md:h-80 rounded-lg overflow-hidden"
               >
+                {imageLoading[index + 2] && (
+                  <div className="absolute inset-0 bg-black-200 bg-opacity-30 backdrop-blur-lg rounded-lg"></div>
+                )}
                 <Link href={image.src} target="_blank">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    fill
+                    className={`rounded-lg transition-opacity duration-500 ${
+                      imageLoading[index + 2] ? "opacity-0" : "opacity-100"
+                    }`}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    onLoad={() => handleImageLoad(index + 2)}
                   />
                 </Link>
               </div>
@@ -134,8 +178,8 @@ const ProjectList: React.FC = () => {
             Discover <span className="text-purple">My Other Projects!</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-            {shuffledProjects.map((project: Project, index: number) => (
-              <div key={index} className="p-4 rounded">
+            {shuffledProjects.map((project) => (
+              <div key={project.id} className="p-4 rounded">
                 <Button
                   duration={Math.floor(Math.random() * 10000) + 10000}
                   borderRadius="1.75rem"
@@ -151,10 +195,10 @@ const ProjectList: React.FC = () => {
                       <Image
                         src={project.img}
                         alt={project.alt}
-                        objectFit="cover"
                         className="rounded-[20px] transition-transform duration-300 ease-in-out transform hover:animate-pulseOnce"
                         width={600}
                         height={400}
+                        style={{ objectFit: "cover" }}
                       />
                     </Link>
                   </div>

@@ -11,7 +11,7 @@ export const projects = [
     title: "Go Sports Water Bottle",
     des: "Package Design",
     img: "/image/go_sports/Slide 1@4x-100.webp",
-    link: "/projectslist",
+    link: "/projects/1",
     alt: "Image 1",
   },
   {
@@ -19,7 +19,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist2",
+    link: "/projects/2",
     alt: "Image 2",
   },
   {
@@ -27,7 +27,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist3",
+    link: "/projects/3",
     alt: "Image 3",
   },
   {
@@ -35,7 +35,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist4",
+    link: "/projects/4",
     alt: "Image 4",
   },
   {
@@ -43,7 +43,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist5",
+    link: "/projects/5",
     alt: "Image 5",
   },
   {
@@ -51,7 +51,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist6",
+    link: "/projects/6",
     alt: "Image 6",
   },
   {
@@ -59,7 +59,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist7",
+    link: "/projects/7",
     alt: "Image 1",
   },
   {
@@ -67,7 +67,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist8",
+    link: "/projects/8",
     alt: "Image 2",
   },
   {
@@ -75,7 +75,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist9",
+    link: "/projects/9",
     alt: "Image 3",
   },
   {
@@ -83,7 +83,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist10",
+    link: "/projects/10",
     alt: "Image 4",
   },
   {
@@ -91,7 +91,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist11",
+    link: "/projects/11",
     alt: "Image 5",
   },
   {
@@ -99,7 +99,7 @@ export const projects = [
     title: "Project Name",
     des: "Logo | Branding | Package Design",
     img: "/p1.jpg",
-    link: "/projectslist12",
+    link: "/projects/12",
     alt: "Image 6",
   },
 ];
