@@ -280,11 +280,7 @@ export default function Home() {
           fill="blue"
         />
       </div>
-<<<<<<< HEAD
-      <div className="main-content flex justify-center my-20 pt-20 pb-12 lg:pb-10 lg:pt-10 relative z-20">
-=======
       <div className="main-content flex justify-center my-20 pt-20 pb-12 lg:pb-10 lg:pt-5 relative z-20">
->>>>>>> 7f5dcbacd5634959c86b642b2104579c85aa129c
         <div className="max-w-[89vw] lg:max-w-2xl xl:max-w-[60vw] flex flex-col items-center justify-center">
           <BackgroundGradient>
             <div className="shadow-lg rounded-lg p-8 border border-navy-600 w-full lg:w-[400px] xl:w-[400px] h-full lg:h-[490px] backdrop-filter backdrop-saturate-[180%] bg-slate-950 border-[rgb(243,241,241)] relative z-20">
