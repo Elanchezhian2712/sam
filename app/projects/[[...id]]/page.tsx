@@ -1,14 +1,14 @@
 "use client";
-
-import MagicButton from "@/components/MagicButton";
-import { socialMedia, content, projects } from "@/data/index";
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowLeft, FaLocationArrow } from "react-icons/fa6";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { Button } from "@/components/ui/MovingBorders";
+import Modal from "@/components/Model";
 import { useParams } from "next/navigation";
+import { socialMedia, content, projects } from "@/data/index";
+import MagicButton from "@/components/MagicButton";
 
 interface Project {
   id: number;
@@ -17,7 +17,7 @@ interface Project {
   alt: string;
   title: string;
   des: string;
-} 
+}
 
 function shuffleArray(array: Project[]): Project[] {
   for (let i = array.length - 1; i > 0; i--) {
@@ -42,6 +42,8 @@ const ProjectList: React.FC = () => {
   const [imageLoading, setImageLoading] = useState<boolean[]>(
     new Array(mainContent?.images.length ?? 0).fill(true)
   );
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string } | null>(null);
 
   const handleImageLoad = (index: number) => {
     setImageLoading((prev) => {
@@ -49,6 +51,16 @@ const ProjectList: React.FC = () => {
       newLoadingState[index] = false;
       return newLoadingState;
     });
+  };
+
+  const openModal = (image: { src: string, alt: string }) => {
+    setSelectedImage(image);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedImage(null);
   };
 
   if (!mainContent) {
@@ -124,7 +136,7 @@ const ProjectList: React.FC = () => {
                 {imageLoading[index] && (
                   <div className="absolute inset-0 bg-black-200 bg-opacity-30 backdrop-blur-lg rounded-lg"></div>
                 )}
-                <Link href={image.src} target="_blank">
+                <div onClick={() => openModal(image)} className="cursor-pointer">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -139,7 +151,7 @@ const ProjectList: React.FC = () => {
                     }}
                     onLoad={() => handleImageLoad(index)}
                   />
-                </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -153,7 +165,7 @@ const ProjectList: React.FC = () => {
                 {imageLoading[index + 2] && (
                   <div className="absolute inset-0 bg-black-200 bg-opacity-30 backdrop-blur-lg rounded-lg"></div>
                 )}
-                <Link href={image.src} target="_blank">
+                <div onClick={() => openModal(image)} className="cursor-pointer">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -168,7 +180,7 @@ const ProjectList: React.FC = () => {
                     }}
                     onLoad={() => handleImageLoad(index + 2)}
                   />
-                </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -190,7 +202,7 @@ const ProjectList: React.FC = () => {
                   }}
                   className="flex flex-col text-black dark:text-white border-neutral-200 dark:border-slate-700 w-full"
                 >
-                  <div className="relative w-full h-48 sm:h-64 mt-6 mx-4">
+                  <div className="relative w-full h-48 sm:h-64 mt-4 mx-4">
                     <Link href={project.link}>
                       <Image
                         src={project.img}
@@ -202,7 +214,7 @@ const ProjectList: React.FC = () => {
                       />
                     </Link>
                   </div>
-                  <h3 className="font-bold mt-4">{project.title}</h3>
+                  <h3 className="font-bold mt-0">{project.title}</h3>
                   <p className="text-gray-400 mb-4">{project.des}</p>
                 </Button>
               </div>
@@ -253,6 +265,15 @@ const ProjectList: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      {selectedImage && (
+        <Modal
+          isOpen={modalOpen}
+          onClose={closeModal}
+          imageSrc={selectedImage.src}
+          imageAlt={selectedImage.alt}
+        />
+      )}
     </div>
   );
 };
